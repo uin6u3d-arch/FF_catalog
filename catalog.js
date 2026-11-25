@@ -1,0 +1,1 @@
+window.catalog={total:152,available:69,ratio:496/702,extension:'jpg',categories:[['Cover',1],['Pork - เนื้อหมู',2],['Chicken - เนื้อไก่',35],['Duck - เนื้อเป็ด',45],['Beef - เนื้อวัว',49],['Marinated Meat - เนื้อหมัก',71],['Steak - เนื้อสเต็ก',77]]};

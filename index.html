@@ -3,4 +3,11 @@
 
 /* V1.1 interaction updates */
 .thumb{opacity:.6;border:2px solid transparent;transition:opacity .2s ease-out,transform .2s ease-out,border-color .2s ease-out;transform-origin:center center}.thumb.active{opacity:1;border:2px solid white}aside button{transition:background-color .2s ease-out,color .2s ease-out}aside button.active{background:#fff;color:#000}aside button.active small{color:#444}@media (min-width:701px) and (hover:hover) and (pointer:fine){.thumb:not(:disabled):hover{opacity:1;transform:scale(1.05)}.thumb:not(.active):hover{border-color:#888}aside button:not(.active):hover{background:#454545;color:#fff}}
+
+/* V1.2: subtle book spine shadow, facing pages only */
+@media (min-width:701px){
+#book > .page:first-child:not(:only-child)::after,#book > .page:last-child:not(:only-child)::after{content:"";position:absolute;top:0;bottom:0;width:18px;max-width:12%;pointer-events:none;z-index:1}
+#book > .page:first-child:not(:only-child)::after{right:0;background:linear-gradient(to right,transparent,rgba(0,0,0,.15))}
+#book > .page:last-child:not(:only-child)::after{left:0;background:linear-gradient(to left,transparent,rgba(0,0,0,.15))}
+}
 </style></head><body><header><button id="menu" aria-label="Contents" aria-expanded="false"><img src="Assets/menu.svg" alt=""></button><span>FarmFresh | Product Catalog</span><div id="jump"><label for="number" id="count">Page 1 / 152</label><input id="number" type="number" min="1" max="152" value="1" aria-label="Go to page"></div></header><main id="stage"><button class="arrow" id="prev" aria-label="Previous"><img src="Assets/page_back.svg" alt=""></button><div id="book" aria-live="polite"></div><button class="arrow" id="next" aria-label="Next"><img src="Assets/page_next.svg" alt=""></button></main><div id="mobileCount"></div><aside id="contents" aria-label="Contents" inert></aside><div id="thumbs" inert aria-label="Page thumbnails"></div><footer><button id="toggleThumb" aria-label="Thumbnails" aria-expanded="false"><img src="Assets/buttom-menu-up.svg" alt=""></button></footer><div id="global"><strong>FarmFresh | Product Catalog</strong><progress id="progress" max="3" value="1"></progress><span id="loadText">Loading catalog...</span></div><script src="catalog.js"></script><script src="app.js?v=1.1"></script></body></html>

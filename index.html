@@ -10,4 +10,8 @@
 #book > .page:first-child:not(:only-child)::after{right:0;background:linear-gradient(to right,transparent,rgba(0,0,0,.15))}
 #book > .page:last-child:not(:only-child)::after{left:0;background:linear-gradient(to left,transparent,rgba(0,0,0,.15))}
 }
+
+/* V1.3: category drawer overlays thumbnails and footer; header stays accessible. */
+header{z-index:9}aside{z-index:8;background:#232323}
+@media(max-width:700px){body:has(#contents.open) #jump{visibility:hidden}}
 </style></head><body><header><button id="menu" aria-label="Contents" aria-expanded="false"><img src="Assets/menu.svg" alt=""></button><span>FarmFresh | Product Catalog</span><div id="jump"><label for="number" id="count">Page 1 / 152</label><input id="number" type="number" min="1" max="152" value="1" aria-label="Go to page"></div></header><main id="stage"><button class="arrow" id="prev" aria-label="Previous"><img src="Assets/page_back.svg" alt=""></button><div id="book" aria-live="polite"></div><button class="arrow" id="next" aria-label="Next"><img src="Assets/page_next.svg" alt=""></button></main><div id="mobileCount"></div><aside id="contents" aria-label="Contents" inert></aside><div id="thumbs" inert aria-label="Page thumbnails"></div><footer><button id="toggleThumb" aria-label="Thumbnails" aria-expanded="false"><img src="Assets/buttom-menu-up.svg" alt=""></button></footer><div id="global"><strong>FarmFresh | Product Catalog</strong><progress id="progress" max="3" value="1"></progress><span id="loadText">Loading catalog...</span></div><script src="catalog.js"></script><script src="app.js?v=1.1"></script></body></html>

@@ -35,4 +35,20 @@ footer{height:60px}#thumbs{bottom:60px}#mobileCount{display:none}
 body:has(#contents.open) #jump{visibility:hidden}
 }
 @media(max-width:700px) and (max-height:600px){header{height:50px}main{height:calc(100dvh - 180px)}#jump,.arrow{bottom:72px}footer{height:48px}#thumbs{bottom:48px}}
-</style></head><body><header><button id="menu" aria-label="Contents" aria-expanded="false"><img src="Assets/menu.svg" alt=""></button><span>FarmFresh | Product Catalog</span><div id="jump"><label for="number" id="count">Page 1 / 152</label><input id="number" type="number" min="1" max="152" value="1" aria-label="Go to page"><span id="mobileTotal" aria-hidden="true">/ 152</span></div></header><main id="stage"><button class="arrow" id="prev" aria-label="Previous"><img class="desktopArrow" src="Assets/page_back.svg" alt=""><img class="mobileArrow" src="Assets/page_back2_mobile.svg" alt=""></button><div id="book" aria-live="polite"></div><button class="arrow" id="next" aria-label="Next"><img class="desktopArrow" src="Assets/page_next.svg" alt=""><img class="mobileArrow" src="Assets/page_next2_mobile.svg" alt=""></button></main><div id="mobileCount"></div><aside id="contents" aria-label="Contents" inert></aside><div id="thumbs" inert aria-label="Page thumbnails"></div><footer><button id="toggleThumb" aria-label="Thumbnails" aria-expanded="false"><img src="Assets/buttom-menu-up.svg" alt=""></button></footer><div id="global"><strong>FarmFresh | Product Catalog</strong><progress id="progress" max="3" value="1"></progress><span id="loadText">Loading catalog...</span></div><script src="catalog.js"></script><script src="app.js?v=1.7"></script></body></html>
+
+/* V1.8 mobile proportions and explicit page stepper */
+#mobileStepper{display:none}
+@media(max-width:700px){
+header{height:64px;padding:0 20px}
+main{height:calc(100dvh - 194px);padding:0 10px;align-items:center}
+#jump{bottom:78px;width:140px;height:40px;gap:3px;padding:0 8px}
+#jump input{width:42px;font-size:16px;min-width:0}
+#mobileTotal{font-size:16px}
+#mobileStepper{display:flex;flex-direction:column;width:22px;height:38px;flex:none}
+#mobileStepper button{height:19px;width:22px;display:grid;place-items:center;padding:0;color:#111;touch-action:manipulation}
+#mobileStepper button::before{content:"";width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent}
+#stepUp::before{border-bottom:5px solid currentColor}#stepDown::before{border-top:5px solid currentColor}
+.arrow{bottom:76px;width:44px;height:44px}.arrow img{width:24px;height:30px}
+}
+@media(max-width:700px) and (max-height:600px){header{height:44px}main{height:calc(100dvh - 144px)}#jump{bottom:56px}.arrow{bottom:54px}}
+</style></head><body><header><button id="menu" aria-label="Contents" aria-expanded="false"><img src="Assets/menu.svg" alt=""></button><span>FarmFresh | Product Catalog</span><div id="jump"><label for="number" id="count">Page 1 / 152</label><input id="number" type="number" min="1" max="152" value="1" aria-label="Go to page"><span id="mobileTotal" aria-hidden="true">/ 152</span><div id="mobileStepper"><button type="button" id="stepUp" aria-label="Increase page"></button><button type="button" id="stepDown" aria-label="Decrease page"></button></div></div></header><main id="stage"><button class="arrow" id="prev" aria-label="Previous"><img class="desktopArrow" src="Assets/page_back.svg" alt=""><img class="mobileArrow" src="Assets/page_back2_mobile.svg" alt=""></button><div id="book" aria-live="polite"></div><button class="arrow" id="next" aria-label="Next"><img class="desktopArrow" src="Assets/page_next.svg" alt=""><img class="mobileArrow" src="Assets/page_next2_mobile.svg" alt=""></button></main><div id="mobileCount"></div><aside id="contents" aria-label="Contents" inert></aside><div id="thumbs" inert aria-label="Page thumbnails"></div><footer><button id="toggleThumb" aria-label="Thumbnails" aria-expanded="false"><img src="Assets/buttom-menu-up.svg" alt=""></button></footer><div id="global"><strong>FarmFresh | Product Catalog</strong><progress id="progress" max="3" value="1"></progress><span id="loadText">Loading catalog...</span></div><script src="catalog.js"></script><script src="app.js?v=1.8"></script></body></html>

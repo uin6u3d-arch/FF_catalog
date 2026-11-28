@@ -51,4 +51,15 @@ main{height:calc(100dvh - 194px);padding:0 10px;align-items:center}
 .arrow{bottom:76px;width:44px;height:44px}.arrow img{width:24px;height:30px}
 }
 @media(max-width:700px) and (max-height:600px){header{height:44px}main{height:calc(100dvh - 144px)}#jump{bottom:56px}.arrow{bottom:54px}}
+
+/* V1.10: compact mobile controls and unobstructed thumbnail drawer */
+@media(max-width:700px){
+footer{height:36px}footer button{height:36px;min-width:64px;padding:0;display:grid;place-items:center}footer img{width:48px;height:18px}
+#thumbs{bottom:36px;height:116px;padding:8px 12px;transform:translateY(calc(100% + 36px))}#thumbs.open{transform:none}
+main{height:calc(100dvh - 152px);padding:0 10px}
+#jump{bottom:47px;height:34px;width:140px}#mobileStepper{height:32px}#mobileStepper button{height:16px}
+.arrow{bottom:40px;width:44px;height:48px}.arrow img{width:22px;height:26px}
+body:has(#thumbs.open) #jump,body:has(#thumbs.open) .arrow,body:has(#contents.open) #jump,body:has(#contents.open) .arrow{visibility:hidden;pointer-events:none}
+}
+@media(max-width:700px) and (max-height:600px){main{height:calc(100dvh - 132px)}}
 </style></head><body><header><button id="menu" aria-label="Contents" aria-expanded="false"><img src="Assets/menu.svg" alt=""></button><span>FarmFresh | Product Catalog</span><div id="jump"><label for="number" id="count">Page 1 / 151</label><input id="number" type="number" min="1" max="151" value="1" aria-label="Go to page"><span id="mobileTotal" aria-hidden="true">/ 151</span><div id="mobileStepper"><button type="button" id="stepUp" aria-label="Increase page"></button><button type="button" id="stepDown" aria-label="Decrease page"></button></div></div></header><main id="stage"><button class="arrow" id="prev" aria-label="Previous"><img class="desktopArrow" src="Assets/page_back.svg" alt=""><img class="mobileArrow" src="Assets/page_back2_mobile.svg" alt=""></button><div id="book" aria-live="polite"></div><button class="arrow" id="next" aria-label="Next"><img class="desktopArrow" src="Assets/page_next.svg" alt=""><img class="mobileArrow" src="Assets/page_next2_mobile.svg" alt=""></button></main><div id="mobileCount"></div><aside id="contents" aria-label="Contents" inert></aside><div id="thumbs" inert aria-label="Page thumbnails"></div><footer><button id="toggleThumb" aria-label="Thumbnails" aria-expanded="false"><img src="Assets/buttom-menu-up.svg" alt=""></button></footer><div id="global"><strong>FarmFresh | Product Catalog</strong><progress id="progress" max="3" value="1"></progress><span id="loadText">Loading catalog...</span></div><script src="catalog.js"></script><script src="app.js?v=1.8"></script></body></html>
